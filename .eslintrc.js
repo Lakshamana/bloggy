@@ -17,6 +17,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'arrow-parens': "off",
-    'no-console': process.env.NODE_ENV === 'development' ? 'off' : 'error'
+    'no-console': 'off'
+    // 'no-console': process.env.NODE_ENV === 'development' ? 'off' : 'error'
   }
 }
