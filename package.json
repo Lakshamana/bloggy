@@ -28,9 +28,6 @@
     "eject": "react-scripts eject",
     "seed": "node server/seeds/seeder.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",

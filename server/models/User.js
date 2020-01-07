@@ -1,7 +1,7 @@
 const mongoose = require('../dbConfig')
 
 const User = new mongoose.Schema({
-  username: { type: String, unique: true },
+  username: { type: String, unique: true, trim: true },
   password: { type: String }
 })
 
