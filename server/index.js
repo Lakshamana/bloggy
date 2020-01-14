@@ -1,10 +1,10 @@
 const Koa = require('koa')
 const router = require('./router')
-const config = require('./envConfig')
+const config = require('../envConfig')
 
 const app = new Koa()
 
-const { API_HOST, API_PORT, PROTOCOL } = config
+const { REACT_APP_API_PORT, REACT_APP_API_HOST, REACT_APP_PROTOCOL } = config
 
 function errorHandler(ctx, next) {
   return next().catch(err => {
@@ -17,6 +17,9 @@ function errorHandler(ctx, next) {
 app.use(errorHandler)
 app.use(router.routes())
 
-app.listen(API_PORT, API_HOST)
+app.listen(REACT_APP_API_PORT, REACT_APP_API_HOST)
 
-console.log(`Server running on ${PROTOCOL}://${API_HOST}:${API_PORT}`)
+console.log(
+  'Server running on' +
+    `${REACT_APP_PROTOCOL}://${REACT_APP_API_HOST}/${REACT_APP_API_PORT}`
+)

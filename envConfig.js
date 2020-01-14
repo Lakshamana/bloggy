@@ -27,14 +27,18 @@ const dbOtptions = {
   }
 }
 
-const { API_HOST, API_PORT, PROTOCOL } = process.env
+const {
+  REACT_APP_API_HOST,
+  REACT_APP_API_PORT,
+  REACT_APP_PROTOCOL
+} = process.env
 
 module.exports = {
   db: {
     ...dbOtptions,
     ...(process.env.DBCONNECTOR === 'mongoose' && { useNewUrlParser: false })
   },
-  API_HOST,
-  API_PORT,
-  PROTOCOL
+  REACT_APP_API_HOST,
+  REACT_APP_API_PORT,
+  REACT_APP_PROTOCOL
 }
