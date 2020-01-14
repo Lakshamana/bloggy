@@ -15,9 +15,11 @@ const Home = () => {
     posts.map(post => {
       const { title, body } = post
       return (
-        <div className='card'>
+        <div className='card indigo lighten-4'>
           <div className='card-content'>
-            <span className='card-title blue-text'>{title}</span>
+            <span className='card-title blue-text'>
+              <strong>{title}</strong>
+            </span>
             <p>
               {body.substring(0, 50)}... <span>Read more</span>
             </p>
@@ -33,7 +35,15 @@ const Home = () => {
       <div className='smoke-layer'>
         <div className='container'>
           <div className='row'>
-            <div className='col s12'>{renderPosts}</div>
+            <div className='col s12'>
+              <form>
+                <div className='input-field smoke-ipt-bg ipt-style'>
+                  <input type='text' placeholder='Search...' />
+                </div>
+              </form>
+              <br />
+              {renderPosts}
+            </div>
           </div>
         </div>
       </div>

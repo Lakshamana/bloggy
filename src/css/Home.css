@@ -1,3 +1,5 @@
+/* --- Smokes and backgrounds --- */
+
 .img-back {
   background: url('../assets/grid.jpg');
 }
@@ -9,3 +11,19 @@
   height: 100%;
   background-color: rgba(33, 39, 51, 0.527);
 }
+
+.smoke-ipt-bg {
+  background-color: rgba(24, 26, 29, 0.856);
+}
+
+/* --- Input styles --- */
+.ipt-style {
+  border-radius: 9px;
+  border: 1px solid white;
+  padding: 3px;
+}
+
+.ipt-style input[type=text]:focus {
+  color: #fff;
+}
+
