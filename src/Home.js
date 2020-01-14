@@ -8,7 +8,7 @@ const Home = () => {
     axios.post('/api/posts/query', {}).then(({ data }) => {
       setPosts(data)
     })
-  })
+  }, [])
 
   const renderPosts = posts.length ? (
     posts.map(post => {
