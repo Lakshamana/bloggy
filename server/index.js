@@ -1,6 +1,7 @@
 const Koa = require('koa')
 const router = require('./router')
 const config = require('../envConfig')
+const cors = require('@koa/cors')
 
 const app = new Koa()
 
@@ -14,12 +15,11 @@ function errorHandler(ctx, next) {
   })
 }
 
+const origin = `${REACT_APP_PROTOCOL}://${REACT_APP_API_HOST}:${REACT_APP_API_PORT}`
+app.use(cors({ origin: '*' }))
 app.use(errorHandler)
 app.use(router.routes())
 
 app.listen(REACT_APP_API_PORT, REACT_APP_API_HOST)
 
-console.log(
-  'Server running on' +
-    `${REACT_APP_PROTOCOL}://${REACT_APP_API_HOST}/${REACT_APP_API_PORT}`
-)
+console.log('Server running on ' + origin)

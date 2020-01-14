@@ -36,7 +36,7 @@ async function list(ctx) {
     ...(title && { title: new RegExp(title, 'i') }),
     ...(tags && { tags: { $in: tags } })
   }
-  console.log(query)
+  console.log('query')
   ctx.status = 200
   ctx.body = await Post.find(query)
 }
