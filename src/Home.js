@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from './plugins/axios.plugin'
+import './css/Home.css'
 
 const Home = () => {
   const [posts, setPosts] = useState([])
@@ -14,21 +15,27 @@ const Home = () => {
     posts.map(post => {
       const { title, body } = post
       return (
-        <div className='card blue-grey darken-2'>
-          <div className='card-content white-text'>
-            <span className='card-title'>{title}</span>
-            <p>{body}</p>
+        <div className='card'>
+          <div className='card-content'>
+            <span className='card-title blue-text'>{title}</span>
+            <p>
+              {body.substring(0, 50)}... <span>Read more</span>
+            </p>
           </div>
         </div>
       )
     })
   ) : (
-    <span className='center'>Loading...</span>
+    <div className='center'>Loading...</div>
   )
   return (
-    <div className='container'>
-      <div className='row'>
-        <div className='col s12'>{renderPosts}</div>
+    <div className='img-back'>
+      <div className='smoke-layer'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col s12'>{renderPosts}</div>
+          </div>
+        </div>
       </div>
     </div>
   )
