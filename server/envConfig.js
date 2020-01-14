@@ -9,7 +9,7 @@ const suffixes = {
 const tail = suffixes[process.env.NODE_ENV] || ''
 
 const envSetup = require('dotenv').config({
-  path: path.resolve(__dirname, '../.env' + tail)
+  path: path.resolve(__dirname, '.env' + tail)
 })
 
 if (envSetup.error) {

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { db } = require('../envConfig')
+const { db } = require('./envConfig')
 
 try {
   const { useNewUrlParser } = db

@@ -1,4 +1,4 @@
-const { model: Tag } = require('../models/Tag')
+const Tag = require('../models/Tag')
 
 async function create(ctx) {
   const { name } = ctx.request.body
